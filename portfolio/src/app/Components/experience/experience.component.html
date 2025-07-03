@@ -1,1 +1,11 @@
-<p>experience works!</p>
+<div class="experiences-container">
+  <div class="experience-card fade-in" *ngFor="let experience of experiences">
+    <!-- <img [src]="experience.image" [alt]="experience.title" class="experience-image" /> -->
+    <div class="experience-info">
+      <h2>{{ experience.title }}</h2>
+      <h3>{{experience.subtitle}}</h3>
+      <ul><li>{{ experience.description }}</li>
+      <li>{{ experience.description2 }}</li></ul>
+    </div>
+  </div>
+</div>

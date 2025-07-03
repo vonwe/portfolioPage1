@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import emailjs from 'emailjs-com';
 
 @Component({
   selector: 'app-contact',
@@ -30,9 +31,29 @@ export class ContactComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
-      console.log('Message sent:', this.contactForm.value); // Replace with HTTP logic later
-      alert('Message sent successfully!');
-      this.contactForm.reset();
+      const { name, email, subject, message } = this.contactForm.value;
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message
+      };
+
+      emailjs.send(
+        'service_3wmslta',
+        'template_3vegbxb',
+        templateParams,
+        'Gny19ADlUvRq21cjx'
+      )
+      .then(() => {
+        alert('Message sent successfully!');
+        this.contactForm.reset();
+      })
+      .catch((error) => {
+        console.error('Email sending error:', error);
+        alert('There was a problem sending your message.');
+      });
     }
   }
 }

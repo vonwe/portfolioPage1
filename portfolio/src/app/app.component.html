@@ -1,3 +1,8 @@
+<!-- <button mat-button (click)="toggleDarkMode()" class="theme-toggle">
+  Toggle {{ isDarkMode ? 'Light' : 'Dark' }} Mode
+</button> -->
+
+
 <nav class="navigation">
   <button mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">About Me</button>
   <button mat-button routerLink="/projects" routerLinkActive="active-link">Projects</button>
@@ -6,3 +11,27 @@
 </nav>
 
 <router-outlet></router-outlet>
+
+<footer class="footer">
+  <div class="footer-content">
+    <span>© 2025 Vincent Onwe</span>
+
+    <a href="https://github.com/vonwe" target="_blank" rel="noopener" aria-label="GitHub">
+      <img src="assets/icons/github.svg" alt="GitHub" class="icon" />
+    </a>
+
+    <a href="https://www.linkedin.com/in/vincentonwe21" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <img src="assets/icons/icons8-linkedin.svg" alt="LinkedIn" class="icon" />
+    </a>
+
+    <a href="mailto:voonwe@gmail.com" aria-label="Email">
+      <img src="assets/icons/gmail.svg" alt="Gmail" class="icon" />
+    </a>
+
+    <button mat-icon-button (click)="toggleDarkMode()" aria-label="Toggle Theme">
+      <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
+  </div>
+</footer>
+
+

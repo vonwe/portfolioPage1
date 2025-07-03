@@ -16,3 +16,61 @@ button.mat-button {
   color: #1976d2;
   border-bottom: 2px solid #1976d2;
 }
+
+.footer {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-content a,
+.footer-content button {
+  color: var(--accent-color);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.footer-content a:hover,
+.footer-content button:hover {
+  transform: scale(1.2);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.icon:hover {
+  filter: grayscale(0%);
+}
+
+.github-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.github-link:hover {
+  text-decoration: underline;
+}
+
+.theme-toggle {
+  font-weight: 500;
+  cursor: pointer;
+}
