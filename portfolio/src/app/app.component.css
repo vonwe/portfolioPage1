@@ -3,8 +3,33 @@
   gap: 1rem;
   justify-content: center;
   padding: 1rem;
-  background-color: #fafafa;
-  border-bottom: 1px solid #ddd;
+  background-color: #7393B3;
+  color: var(--text-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navigation-bar a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.navigation-bar a:hover {
+  color: var(--accent-color);
+}
+
+.navigation-bar a.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s;
 }
 
 button.mat-button {
@@ -18,7 +43,7 @@ button.mat-button {
 }
 
 .footer {
-  background-color: var(--card-bg);
+  background-color: var(--bg-color);
   color: var(--text-color);
   text-align: center;
   padding: 1rem;
@@ -40,7 +65,7 @@ button.mat-button {
   font-size: 24px;
   display: flex;
   align-items: center;
-  transition: transform 0.2s;
+  transition: color 0.3s, transform 0.2s;
 }
 
 .footer-content a:hover,
@@ -51,8 +76,12 @@ button.mat-button {
 .icon {
   width: 24px;
   height: 24px;
-  filter: grayscale(100%);
-  transition: filter 0.3s;
+  filter: brightness(0) invert(0); /* default: dark logo */
+  transition: filter 0.3s ease;
+}
+
+body.dark-mode .footer-content img.icon {
+  filter: brightness(1) invert(1); /* flips to light on dark bg */
 }
 
 .icon:hover {

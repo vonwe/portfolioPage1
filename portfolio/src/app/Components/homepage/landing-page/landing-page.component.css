@@ -6,7 +6,9 @@
   padding: 2rem;
   flex-wrap: wrap;
   /* Below are new additions for device responsiveness */
-  background: linear-gradient(to bottom right, #f0f4f8, #ffffff);
+  /* background: linear-gradient(to bottom right, #f0f4f8, #ffffff); */
+  background-color: var(--bg-color);
+  color: var(--text-color);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 }
@@ -29,6 +31,10 @@
   font-size: 1.1rem;
   line-height: 1.6;
   animation: slide-in 0.8s ease forwards;
+}
+
+.about-text h1 {
+  color: var(--heading-color);
 }
 
 /* New additions */
