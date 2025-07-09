@@ -6,6 +6,9 @@
       <h3>{{experience.subtitle}}</h3>
       <ul><li>{{ experience.description }}</li>
       <li>{{ experience.description2 }}</li></ul>
+      <div class="tags">
+        <span class="tag" *ngFor="let tag of experience.tags">{{ tag }}</span>
+      </div>
     </div>
   </div>
 </div>
